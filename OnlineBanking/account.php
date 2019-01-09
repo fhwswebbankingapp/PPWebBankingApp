@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <?php include 'incl/header.php';?>
+  <?php include 'incl/page/header.php';?>
 
   <body id="page-top">
 
 
-    <?php include 'incl/navbar.php';?>
+    <?php include 'incl/page/navbar.php';?>
 
     <div id="wrapper">
 
@@ -34,19 +34,7 @@
 
         <div class="container-fluid">
 
-          <?php
-        
-            //Fehlerbehandlung
-            error_reporting (0);
-
-            $db = new mysqli('localhost', 'root','','testdb');
-            print_r($db->connect_error);
-
-            if($db->connect_error){
-                die('Verbindung nicht möglich!');
-            }
-            echo "Connected successfully <br>";
-          ?>
+          <?php include 'incl/dbconnect.php';?>
 
           <!-- Content -->
           <!-- Jumbotron-->
@@ -63,27 +51,12 @@
                 <label for="staticIban" class="col-sm-2 col-form-label">Iban:</label>
                 <div class="col-sm-10">
                   <input type="text" readonly class="form-control-plaintext" id="staticIban" value="DE12 5000 1706 4848 9890">
-                </div>
-                <div class="col-sm-10" style="padding: 10px">
-                    <?php
-                    
-                      $sql = "SELECT * FROM user";
-                      $result = $db->query($sql);
+                </div> 
+                <label for="staticBalance" class="col-sm-2 col-form-label">Kontostand:</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="staticBalance" value="101,00 €">
+                </div>      
 
-                      if ($result->num_rows > 0) {
-                          echo "<table><tr><th>Name</th><th>Age</th></tr>";
-                          // output data of each row
-                          while($row = $result->fetch_assoc()) {
-                              echo "<tr><td>" . $row["name"]. "</td><td>" . $row["age"]. "</td></tr>";
-                          }
-                          echo "</table>";
-                      } else {
-                          echo "0 results";
-                      }
-                      
-                      
-                    ?>         
-                </div>
               </div>
             </form>
           </div>
@@ -109,7 +82,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include 'incl/scripts.php';?>
+    <?php include 'incl/page/scripts.php';?>
 
   </body>
 

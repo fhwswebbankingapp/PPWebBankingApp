@@ -1,11 +1,11 @@
 <?php
-			/*
-			Testdatenbank
+		/*
+		Testdatenbank
             $servername = "localhost";
             $username = "root";
             $password = "";
             $dbname = "testdb";
-			*/
+		*/
 
             $servername = "localhost";
             $username = "root";

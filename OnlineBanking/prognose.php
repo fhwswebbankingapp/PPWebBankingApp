@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <?php include 'incl/header.php';?>
+  <?php include 'incl/page/header.php';?>
 
   <body id="page-top">
 
-    <?php include 'incl/navbar.php';?>
+    <?php include 'incl/page/navbar.php';?>
 
     <div id="wrapper">
 
@@ -17,47 +17,33 @@
             <span>Übersicht</span>
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="ueberweisung.php">
             <i class="fas fa-fw fa-list"></i>
             <span>Überweisung</span></a>
         </li>        
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="prognose.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Prognose</span></a>
-        </li>
+        </li>        
       </ul>
 
       <div id="content-wrapper">
 
         <div class="container-fluid">
 
-
-
-
           <!-- Content -->
           <!-- Jumbotron-->
           <div class="page-header">
-            <h2>Überweisung:</h2>
+            <h2>Prognose:</h2>
           </div>          
           <div class="jumbotron jumbo-content">
             <h4>Hallo Welt!</h4> 
-            <?php include 'incl/dbconnect.php';?>
-            <?php include 'incl/dbausgabe.php';?>
           </div>
-
-          <form method="post" action="ueberweisung.php">          
-          Alter: <input type="text" name="age"><br />
-          Name: <input type="text" name="vorname"><br />
-          Submit: <input type="submit" value="absenden">
-          </form>
 
         </div>
         <!-- /.container-fluid -->
-
-
-
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
@@ -74,7 +60,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include 'incl/scripts.php';?>
+    <?php include 'incl/page/scripts.php';?>
 
   </body>
 

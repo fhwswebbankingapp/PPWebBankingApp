@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <?php include 'incl/header.php';?>
+  <?php include 'incl/page/header.php';?>
 
   <body id="page-top">
 
-    <?php include 'incl/navbar.php';?>
+    <?php include 'incl/page/navbar.php';?>
+    
 
     <div id="wrapper">
 
@@ -22,7 +23,7 @@
             <i class="fas fa-fw fa-list"></i>
             <span>Überweisung</span></a>
         </li>        
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="prognose.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Prognose</span></a>
@@ -33,14 +34,13 @@
 
         <div class="container-fluid">
 
+          <?php include 'incl/dbconnect.php';?>
+
+          
           <!-- Content -->
-          <!-- Jumbotron-->
-          <div class="page-header">
-            <h2>Prognose:</h2>
-          </div>          
-          <div class="jumbotron jumbo-content">
-            <h4>Hallo Welt!</h4> 
-          </div>
+
+
+                    
 
         </div>
         <!-- /.container-fluid -->
@@ -58,9 +58,9 @@
       <!-- /.content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /#wrapper -->    
 
-    <?php include 'incl/scripts.php';?>
+    <?php include 'incl/page/scripts.php';?>
 
   </body>
 

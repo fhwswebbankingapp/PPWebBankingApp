@@ -1,7 +1,5 @@
 
 <?php include 'incl/dbconnect.php';?>
-<?php include 'incl/dbausgabe.php';?>
-
 <?php
 
 
@@ -77,8 +75,58 @@ if ($result->num_rows > 0) {
 }
 */
 
+/*
+$sql = "SELECT * FROM ueberweisung";
+$result = $db->query($sql);
 
 
-$db->close();
+if (!$result) {
+    trigger_error('Invalid query: ' . $sql->error);
+}
+
+if ($result->num_rows > 0) {
+  echo "<table><tr><th>Name</th><th>Age</th></tr>";
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+      echo "<tr><td>" . $row["V_IBAN"]. "</td><td>" . $row["A_IBAN"]. "</td></tr>";
+  }
+  echo "</table>";
+} else {
+  echo "0 results";
+}
+*/
+
+/*
+$sql = "SELECT * FROM kunde";
+$result = $db->query($sql);
+
+if ($result->num_rows > 0) {
+  $row = $result->fetch_assoc();
+  echo " " . $row["NAME"]. "   " . $row["VORNAME"]. "  <br>";
+  $row = $result->fetch_assoc();
+  echo " " . $row["NAME"]. "   " . $row["VORNAME"]. "  ";
+
+} else {
+  echo "0 results";
+}
+*/
+
+      $sql = "SELECT BETRAG FROM konto WHERE IBAN=123456";
+      $result = $db->query($sql);
+
+        $row = $result->fetch_assoc();
+        $test1 = $row["BETRAG"];
+
+        if($test1 >= 300){
+          echo"400+<br>";
+        } else {
+          echo"not 400+<br>";
+        }
+
+        echo $test1;
+
+
+
+//$db->close();
 
 ?>

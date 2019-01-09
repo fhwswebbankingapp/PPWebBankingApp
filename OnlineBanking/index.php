@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <?php include 'incl/header.php';?>
+  <?php include 'incl/page/header.php';?>
 
   <body id="page-top">
 
-    <?php include 'incl/navbar.php';?>
+    <?php include 'incl/page/navbar.php';?>
 
     <div id="wrapper">
 
@@ -26,11 +26,6 @@
           <a class="nav-link" href="prognose.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Prognose</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="new.php">
-            <i class="fab fa-accessible-icon"></i>
-            <span>New-Test</span></a>
         </li>         
       </ul>
 
@@ -44,19 +39,11 @@
             <h2>Willkommen Herr Mustermann!</h2>
           </div>          
           <div class="jumbotron jumbo-content">
-            <h4>Ihre Konten:</h4> 
-            <form>           
-              <div class="form-group row">
-                <label for="staticIban" class="col-sm-2 col-form-label">Iban:</label>
-                <div class="col-sm-10">
-                  <input type="text" readonly class="form-control-plaintext" id="staticIban" value="DE12 5000 1706 4848 9890">
-                </div>
-                <label for="staticBalance" class="col-sm-2 col-form-label">Kontostand:</label>
-                <div class="col-sm-10">
-                  <input type="text" readonly class="form-control-plaintext" id="staticIban" value="101,00€">
-                </div>
-              </div>
-            </form>
+
+            <?php include 'incl/dbconnect.php';?>
+            <h4>Existierende Konten:</h4>
+            <?php include 'incl/dbausgabe.php';?>
+
           </div>
           
         </div>
@@ -77,7 +64,7 @@
     </div>
     <!-- /#wrapper -->
 
-    <?php include 'incl/scripts.php';?>
+    <?php include 'incl/page/scripts.php';?>
 
   </body>
 
