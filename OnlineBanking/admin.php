@@ -35,42 +35,108 @@
 
         <div class="container-fluid">
 
-          <?php include 'incl/dbconnect.php';?>  
+          <?php include 'incl/frontend/dbconnect.php';?>  
 
            
 
           <!-- Content -->
 
             <h4>Konten anzeigen lassen:</h4>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">          
-            Kunde: <select name=Kunden_Id><?php include 'incl/selectName.php';?></select><br>
-            <input type="submit" name="sAnzeigen" value="Anzeigen"/>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <div class="row">
+              <div class="col-2">
+                <p>Kunde:</p>
+              </div>
+              <div class="col-4">
+                <select name=Kunden_Id><?php include 'incl/frontend/selectName.php';?></select>
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <input type="submit" name="sAnzeigen" value="Anzeigen"/>
+              </div>
+            </div>         
             </form> 
             <hr> 
 
             <h4>Konto hinzufügen:</h4>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">          
-            Kunde: <select name=Kunden_Id><?php include 'incl/selectName.php';?></select><br>
-            Zu hinzufügende IBAN: <input type="text" name="iban" placeholder="123456"><br />
-            Startkontostand: <input type="text" name="sBetrag" value="0.00€"><br />
-            <input type="submit" name="sHinzufügen" value="Neue Iban Anlegen"/>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
+              <div class="row">
+                <div class="col-2">
+                  <p>Kunde:</p>
+                </div>
+                <div class="col-4">
+                  <select name=Kunden_Id><?php include 'incl/frontend/selectName.php';?></select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <p>Zu hinzufügende IBAN: </p>
+                </div>
+                <div class="col-4">
+                  <input type="text" name="iban" placeholder="123456">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <p>Startkontostand:</p>
+                </div>
+                <div class="col-4">
+                  <input type="text" name="sBetrag" value="0.00€">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <input type="submit" name="sHinzufügen" value="Neue Iban Anlegen"/>
+                </div>
+              </div>
             </form> 
 
             <hr>  
 
             <h4>Kontostand bearbeiten:</h4>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">          
-            Kunde: <select name=iban><?php include 'incl/selectKonto.php';?></select><br>
-            Neuer Kontostand: <input type="text" name="nBetrag" placeholder="0.00€"><br />
-            <input type="submit" name="sUpdate" value="Update"/>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+              <div class="row">
+                  <div class="col-2">
+                    <p>Kunde:</p>
+                  </div>
+                  <div class="col-4">
+                    <select name=iban><?php include 'incl/frontend/selectKonto.php';?></select>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-2">
+                    <p>Neuer Kontostand: </p>
+                  </div>
+                  <div class="col-4">
+                    <input type="text" name="nBetrag" placeholder="0.00€">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <input type="submit" name="sUpdate" value="Update"/>
+                </div>
+              </div>            
             </form>
 
             <hr>   
              
             <h4>Konto löschen:</h4>
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">          
-            Kunde: <select name=iban><?php include 'incl/selectKonto.php';?></select><br>
-            <input type="submit" name="sLoeschen" value="Löschen"/>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
+
+            <div class="row">
+              <div class="col-2">
+                <p>Kunde:</p>
+              </div>
+              <div class="col-4">
+                <select name=iban><?php include 'incl/frontend/selectKonto.php';?></select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <input type="submit" name="sLoeschen" value="Löschen"/>
+              </div>
+            </div>
             </form> 
 
             <hr>  
@@ -79,16 +145,16 @@
 
             <?php
               if(isset($_POST['sAnzeigen'])){
-              include 'incl/kontoanzeigen.php';   
+              include 'incl/frontend/kontoanzeigen.php';   
             }
               if(isset($_POST['sHinzufügen'])){
-              include 'incl/kontobearbeiten.php';    
+              include 'incl/frontend/kontobearbeiten.php';    
             }
               if(isset($_POST['sUpdate'])){
-              include 'incl/kontostandbearbeiten.php';   
+              include 'incl/frontend/kontostandbearbeiten.php';   
             }
               if(isset($_POST['sLoeschen'])){
-              include 'incl/kontoloeschen.php';   
+              include 'incl/frontend/kontoloeschen.php';   
             }
             ?>
 

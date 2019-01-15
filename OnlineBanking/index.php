@@ -32,19 +32,32 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
-
+         <?php include 'incl/frontend/dbconnect.php';?>
           <!-- Content -->
           <!-- Jumbotron-->
           <div class="page-header">
-            <h2>Willkommen Herr Mustermann!</h2>
-          </div>          
-          <div class="jumbotron jumbo-content">
+            <h2>Willkommen!</h2>
+          </div>     
 
-            <?php include 'incl/dbconnect.php';?>
-            <h4>Existierende Konten:</h4>
-            <?php include 'incl/dbausgabe.php';?>
+          <!--
+          <div class="row">
+            <div class="col-4" style="background-color:pink;">
+              <p>Besitzer</p>
+            </div>
+            <div class="col-4" style="background-color:red;">
+              <p>Iban</p>
+            </div>
+            <div class="col-4" style="background-color:green;">
+              <p>Betrag</p>
+            </div> 
+          </div>
+          -->
+
+
+            <?php  include 'incl/frontend/dbausgabe.php';?>
 
           </div>
+          
           
         </div>
         <!-- /.container-fluid -->

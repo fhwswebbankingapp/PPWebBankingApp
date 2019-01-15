@@ -34,7 +34,7 @@
 
         <div class="container-fluid">
 
-          <?php include 'incl/dbconnect.php';?>
+          <?php include 'incl/frontend/dbconnect.php';?>
 
           
           <!-- Content -->

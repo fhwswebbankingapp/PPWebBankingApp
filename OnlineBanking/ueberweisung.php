@@ -33,7 +33,7 @@
 
         <div class="container-fluid">
 
-          <?php include 'incl/dbconnect.php';?>  
+          <?php include 'incl/frontend/dbconnect.php';?>  
 
           <!-- Content -->
           <!-- Jumbotron-->
@@ -42,22 +42,65 @@
           </div>          
           <div class="jumbotron jumbo-content">
             <h4></h4> 
-            <?php include 'incl/dbconnect.php';?> 
+            <?php include 'incl/frontend/dbconnect.php';?> 
 
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">   
-              Konto: <select name=vIban><?php include 'incl/selectKonto.php';?></select><br>                 
-              Empfänger: <select name=aIban><?php include 'incl/selectKonto.php';?></select><br>
-              Betrag in Euro: <input type="text" name="ueBetrag" value="10.00"><br />
-              <input type="submit" name="sSenden" value="Senden"/>
+            <!--
+            <div class="row">
+              <div class="col-4" style="background-color:pink;">
+                <p>Besitzer</p>
+              </div>
+              <div class="col-4" style="background-color:red;">
+                <p>Iban</p>
+              </div>
+              <div class="col-4" style="background-color:green;">
+                <p>Betrag</p>
+              </div> 
+            </div>
+            -->
+
+            
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
+            <div class="row">
+              <div class="col-3">
+                  <p>Konto: </p>
+              </div> 
+              <div class="col-9">
+                  <select name=vIban><?php include 'incl/frontend/selectKonto.php';?></select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                  <p>Empfänger: </p>
+              </div> 
+              <div class="col-9">
+                  <select name=aIban><?php include 'incl/frontend/selectKonto.php';?></select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                  <p>Betrag in Euro: </p>
+              </div> 
+              <div class="col-9">
+                  <input type="text" name="ueBetrag" value="10.00">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                  <input type="submit" name="sSenden" value="Senden"/>
+              </div> 
+
+            </div>
+
+              
             </form> 
-          </div>
+            
 
-          <?php
+            <?php
               if(isset($_POST['sSenden'])){
-              include 'incl/ueberweise.php';
-            }
-          ?>
-          
+                include 'incl/frontend/ueberweise.php';
+              }
+            ?>
+          </div>
 
         </div>
         <!-- /.container-fluid -->
