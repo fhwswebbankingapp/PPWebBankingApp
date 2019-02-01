@@ -53,7 +53,7 @@
             </div>
             <div class="row">
               <div class="col-2">
-                <input type="submit" name="sAnzeigen" value="Anzeigen"/>
+                <button type="submit" class="btn" name="sAnzeigen" value="Anzeigen">Anzeigen</button>
               </div>
             </div>         
             </form> 
@@ -74,7 +74,7 @@
                   <p>Zu hinzufügende IBAN: </p>
                 </div>
                 <div class="col-4">
-                  <input type="text" name="iban" placeholder="123456">
+                  <input type="text" name="iban" placeholder="XX00 0000 0000 0000 0000 00">
                 </div>
               </div>
               <div class="row">
@@ -87,7 +87,7 @@
               </div>
               <div class="row">
                 <div class="col-2">
-                  <input type="submit" name="sHinzufügen" value="Neue Iban Anlegen"/>
+                  <button type="submit" class="btn" name="sHinzufügen" value="Neue Iban Anlegen">Neue Iban Anlegen</button>
                 </div>
               </div>
             </form> 
@@ -114,7 +114,7 @@
               </div>
               <div class="row">
                 <div class="col-2">
-                  <input type="submit" name="sUpdate" value="Update"/>
+                  <button type="submit" class="btn" name="sUpdate" value="Update">Update</button>
                 </div>
               </div>            
             </form>
@@ -134,14 +134,22 @@
             </div>
             <div class="row">
               <div class="col-2">
-                <input type="submit" name="sLoeschen" value="Löschen"/>
+                <button type="submit" class="btn" name="sLoeschen" value="Löschen">Löschen</button>
               </div>
             </div>
             </form> 
 
             <hr>  
 
-            <h4>Ausgabe:</h4>
+            <div class="row">
+              <div class="col-4" >
+                <h4>Ausgabe:</h4>
+              </div>
+              <div class="col-4" >
+                <p id="errorp" style="color:red; font-weight: bold;"></p>
+                <p id="successp" style="color:green; font-weight: bold;"></p>
+              </div>
+             </div> 
 
             <?php
               if(isset($_POST['sAnzeigen'])){
@@ -165,7 +173,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Online-Banking 2018</span>
+              <span>Copyright © Online-Banking 2019</span>
             </div>
           </div>
         </footer>

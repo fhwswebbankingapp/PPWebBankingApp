@@ -39,24 +39,9 @@
             <h2>Willkommen!</h2>
           </div>     
 
-          <!--
-          <div class="row">
-            <div class="col-4" style="background-color:pink;">
-              <p>Besitzer</p>
-            </div>
-            <div class="col-4" style="background-color:red;">
-              <p>Iban</p>
-            </div>
-            <div class="col-4" style="background-color:green;">
-              <p>Betrag</p>
-            </div> 
-          </div>
-          -->
-
-
             <?php  include 'incl/frontend/dbausgabe.php';?>
 
-          </div>
+        </div>
           
           
         </div>
@@ -66,7 +51,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Online-Banking 2018</span>
+              <span>Copyright © Online-Banking 2019</span>
             </div>
           </div>
         </footer>

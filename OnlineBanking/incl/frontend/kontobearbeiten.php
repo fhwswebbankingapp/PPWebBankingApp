@@ -8,9 +8,11 @@
 		VALUES ('$iban', '$kID', '$bet')";
 
 		if (!mysqli_query($db,$sql)) {
-		  die('Error: ' . mysqli_error($db));
+		  die('<script type="text/javascript">document.getElementById("errorp").innerHTML = "Fehler beim Hinzufügen!";</script>');
 		}
-		echo "---- 1 record added ----<br>";
-		include 'incl/kontoanzeigen.php';
+		echo '<script type="text/javascript">',
+             'document.getElementById("successp").innerHTML = "Eintrag hinzugefügt.";',
+             '</script>';
+		include 'incl/frontend/kontoanzeigen.php';
 
 ?>

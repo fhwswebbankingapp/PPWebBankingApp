@@ -40,23 +40,8 @@
           <div class="page-header">
             <h2>Überweisung:</h2>
           </div>          
-          <div class="jumbotron jumbo-content">
             <h4></h4> 
             <?php include 'incl/frontend/dbconnect.php';?> 
-
-            <!--
-            <div class="row">
-              <div class="col-4" style="background-color:pink;">
-                <p>Besitzer</p>
-              </div>
-              <div class="col-4" style="background-color:red;">
-                <p>Iban</p>
-              </div>
-              <div class="col-4" style="background-color:green;">
-                <p>Betrag</p>
-              </div> 
-            </div>
-            -->
 
             
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">  
@@ -66,6 +51,7 @@
               </div> 
               <div class="col-9">
                   <select name=vIban><?php include 'incl/frontend/selectKonto.php';?></select>
+                  <!--<input name=vIban placeholder="XX00 0000 0000 0000 0000 00" style="width:280px"></input>-->
               </div>
             </div>
             <div class="row">
@@ -73,7 +59,8 @@
                   <p>Empfänger: </p>
               </div> 
               <div class="col-9">
-                  <select name=aIban><?php include 'incl/frontend/selectKonto.php';?></select>
+                  <!--<select name=aIban><?php //include 'incl/frontend/selectKonto.php';?></select>-->
+                  <input name=aIban placeholder="XX00 0000 0000 0000 0000 00"></input>
               </div>
             </div>
             <div class="row">
@@ -81,26 +68,30 @@
                   <p>Betrag in Euro: </p>
               </div> 
               <div class="col-9">
-                  <input type="text" name="ueBetrag" value="10.00">
+                  <input type="text" name="ueBetrag" value="10.00€">
               </div>
             </div>
             <div class="row">
               <div class="col-3">
-                  <input type="submit" name="sSenden" value="Senden"/>
+                  <button type="submit" class="btn" name="sSenden" value="Senden">Senden</button>
+              </div>
+              <div class="col-4">
+                <button type="button" class="btn" id="ueAgain">Erneut überweisen</button>
               </div> 
-
-            </div>
-
-              
+              <div class="col-4">
+                <p id="errorp" style="color:red; font-weight: bold;"></p>
+                <p id="successp" style="color:green; font-weight: bold;"></p>
+              </div>
+             </div>               
             </form> 
             
+            <?php include 'incl/frontend/transausgabe.php';?>            
 
             <?php
               if(isset($_POST['sSenden'])){
                 include 'incl/frontend/ueberweise.php';
               }
-            ?>
-          </div>
+            ?>      
 
         </div>
         <!-- /.container-fluid -->
@@ -109,7 +100,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Online-Banking 2018</span>
+              <span>Copyright © Online-Banking 2019</span>
             </div>
           </div>
         </footer>
@@ -121,6 +112,7 @@
     <!-- /#wrapper -->
 
     <?php include 'incl/page/scripts.php';?>
+    <script src="js/tableclick.js"></script>
 
   </body>
 

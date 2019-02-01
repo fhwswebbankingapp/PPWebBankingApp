@@ -376,7 +376,20 @@ body.sidebar-toggled footer.sticky-footer {
 
 /* Eigenes */
 
-.jumbo-content {
-  padding-top: 10px;
-  padding-bottom: 10px;
+input {
+  min-width: 280px;
+}
+
+select {
+  min-width: 280px;
+}
+
+.table-responsive {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  background-color: #E9ECEF;
+  padding: 10px;
 }

@@ -49,7 +49,7 @@
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright © Online-Banking 2018</span>
+              <span>Copyright © Online-Banking 2019</span>
             </div>
           </div>
         </footer>

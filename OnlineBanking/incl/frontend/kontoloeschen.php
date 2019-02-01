@@ -5,8 +5,12 @@
         $sql = "DELETE FROM konto WHERE IBAN=$iban";
 
 		if ($db->query($sql) === TRUE) {
-		    echo "Record deleted successfully";
+		    echo '<script type="text/javascript">',
+	             'document.getElementById("successp").innerHTML = "Eintrag erfolgreich gelöscht.";',
+	             '</script>';
 		} else {
-		    echo "Error deleting record: " . $db->error;
+		    echo '<script type="text/javascript">',
+                 'document.getElementById("errorp").innerHTML = "Fehler beim Löschen!";',
+                 '</script>';
 }
 ?>

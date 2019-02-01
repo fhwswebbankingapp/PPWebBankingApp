@@ -20,7 +20,6 @@ echo '<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="account.php">Account</a>
             <a class="dropdown-item" href="login.php">Login</a>
             <a class="dropdown-item" href="register.html">Register</a>
             <a class="dropdown-item" href="admin.php">Admin</a>
