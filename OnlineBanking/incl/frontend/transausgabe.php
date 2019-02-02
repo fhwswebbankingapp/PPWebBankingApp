@@ -1,6 +1,12 @@
 <?php
 
-            $sql = "SELECT * FROM ueberweisung";
+            $userid=$_SESSION['id'];
+
+
+            $sql = "SELECT ueberweisung.*, konto.*, kunde.* FROM ueberweisung
+            JOIN konto ON ueberweisung.V_IBAN = konto.IBAN
+            JOIN kunde ON konto.KUNDE_ID = kunde.ID
+            WHERE konto.KUNDE_ID= '$userid'"; 
             $result = $db->query($sql);
 
             if ($result->num_rows > 0) {
@@ -9,6 +15,7 @@
                           <thead>
                             <tr>
                               <th style='display:none'>ID</th>
+                              <th>Absender</th>
                               <th>Absender Iban</th>
                               <th>Empfänger Iban</th>
                               <th>Betrag</th>
@@ -36,6 +43,7 @@
 
                     echo "<tr>
                             <td style='display:none'>" . $row["UE_ID"] . "</td>
+                            <td>" . $row["VORNAME"]. " " . $row["NAME"] . "</td>
                             <td>" . $vIBANn . "</td>
                             <td>" . $aIBANn . "</td>
                             <td>" . $row["BETRAG"] . "€" . "</td>

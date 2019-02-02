@@ -1,5 +1,5 @@
 <?php
-echo '<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+echo ('<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
       <a class="navbar-brand mr-1" href="index.php">Online-Banking</a>
 
@@ -22,12 +22,19 @@ echo '<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="login.php">Login</a>
             <a class="dropdown-item" href="register.html">Register</a>
-            <a class="dropdown-item" href="admin.php">Admin</a>
-            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="certificate.php">Zertifikat</a>');
+
+  if($_SESSION['id']== '1'){
+    echo('<a class="dropdown-item" href="admin.php">Admin</a>');
+  }
+            
+
+            echo('<div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
           </div>
         </li>
       </ul>
 
-    </nav>';
+    </nav>');
+            
 ?>

@@ -1,3 +1,12 @@
+<?php session_start();
+
+if(empty($_SESSION['id'])){
+  header('location: login.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -101,7 +110,7 @@
                     <p>Kunde:</p>
                   </div>
                   <div class="col-4">
-                    <select name=iban><?php include 'incl/frontend/selectKonto.php';?></select>
+                    <select name=iban><?php include 'incl/frontend/selectKontoAll.php';?></select>
                   </div>
               </div>
               <div class="row">
@@ -129,7 +138,7 @@
                 <p>Kunde:</p>
               </div>
               <div class="col-4">
-                <select name=iban><?php include 'incl/frontend/selectKonto.php';?></select>
+                <select name=iban><?php include 'incl/frontend/selectKontoAll.php';?></select>
               </div>
             </div>
             <div class="row">

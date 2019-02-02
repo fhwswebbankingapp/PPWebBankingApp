@@ -1,3 +1,10 @@
+<?php session_start();
+
+if(empty($_SESSION['id'])){
+  header('location: login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -36,10 +43,24 @@
           <!-- Content -->
           <!-- Jumbotron-->
           <div class="page-header">
-            <h2>Willkommen!</h2>
-          </div>     
+            <?php 
 
-            <?php  include 'incl/frontend/dbausgabe.php';?>
+              $userid=$_SESSION['id'];
+
+              $sql = "SELECT kunde.* FROM kunde WHERE ID = '$userid'"; 
+              $result = $db->query($sql);
+
+              $row = $result->fetch_assoc();
+              $vName = $row["VORNAME"];
+              $nName = $row["NAME"];
+
+              echo("<h2>Willkommen ". $vName . " " . $nName . "!</h2>")
+            ?>
+          </div>
+          
+
+
+            <?php include 'incl/frontend/dbausgabe.php';?>
 
         </div>
           

@@ -1,10 +1,7 @@
 <?php
-	
-	$userid=$_SESSION['id'];
 
 	$sql = "SELECT kunde.*, konto.* FROM kunde
 	JOIN konto ON kunde.id = konto.kunde_id
-	WHERE ID = '$userid'
 	ORDER BY konto.IBAN";	
 	$result = $db->query($sql);
 
